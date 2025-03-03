@@ -1,0 +1,89 @@
+---
+import type { ICurrencyData } from '../lib/parseCurrencyData';
+
+interface Props {
+  currencyData: ICurrencyData;
+}
+
+const { currencyData } = Astro.props;
+---
+
+<div class="currency-list-container">
+  <div class="currency-list-header">
+    <h2 class="section-title">Current Exchange Rates</h2>
+    <p class="section-subtitle">As of: {currencyData.date}</p>
+  </div>
+
+  <div class="currency-list grid">
+    {currencyData.currencies.map(currency => (
+      <div class="currency-card card">
+        <div class="currency-code">{currency.code}</div>
+        <div class="currency-name">{currency.currency}</div>
+        <div class="currency-amount">{currency.amount} {currency.code} = {currency.rate} CZK</div>
+        <div class="currency-country">{currency.country}</div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .card {
+    background: var(--color-card);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .section-title {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    color: var(--color-text);
+  }
+
+  .section-subtitle {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin: var(--spacing-xs) 0 0;
+  }
+
+  .currency-list-container {
+    margin: var(--spacing-xl) 0;
+  }
+
+  .currency-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .currency-code {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .currency-name {
+    font-size: var(--font-size-base);
+    margin: var(--spacing-xs) 0;
+    color: var(--color-text);
+  }
+
+  .currency-amount {
+    font-size: var(--font-size-lg);
+    margin: var(--spacing-sm) 0;
+    font-weight: 500;
+  }
+
+  .currency-country {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+</style>

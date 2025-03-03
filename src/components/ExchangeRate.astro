@@ -1,0 +1,41 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import CurrencyList from './CurrencyList.astro';
+import CurrencyConverter from './CurrencyConverter';
+import { fetchCurrencyRates } from '../lib/currencyService';
+
+let currencyData;
+try {
+  currencyData = await fetchCurrencyRates();
+} catch (error) {
+  console.error('Failed to fetch currency data:', error);
+  currencyData = {
+    date: new Date().toLocaleDateString(),
+    currencies: []
+  };
+}
+---
+
+<div class="app">
+  <Header/>
+
+  <main class="container">
+    <CurrencyConverter client:idle currencyData={currencyData} />
+    <CurrencyList currencyData={currencyData} />
+  </main>
+
+  <Footer date={currencyData.date} />
+</div>
+
+<style>
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+</style>

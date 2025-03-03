@@ -1,0 +1,28 @@
+---
+interface Props {
+  date: string;
+}
+
+const { date } = Astro.props;
+---
+
+<footer class="page-footer">
+  <div class="container">
+    <p>Data provided by Czech National Bank · Updated: {date}</p>
+  </div>
+</footer>
+
+<style>
+  .page-footer {
+    background-color: var(--color-background-alt);
+    padding: var(--spacing-md) 0 var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .page-footer p {
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+</style>
