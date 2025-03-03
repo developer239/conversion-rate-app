@@ -6,11 +6,13 @@ A currency conversion app built with Astro and React that displays the latest ex
 
 **~74 gzip** (+ ~48KB font)
 
-**Dependencies:**
+**Only Few Dependencies:**
 - Astro
 - React
 - Linaria (like styled-components but static)
 - Vitest (like jest but closer to vite ecosystem)
+
+![preview.png](preview.png)
 
 ## Architecture
 
