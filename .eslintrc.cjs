@@ -9,5 +9,8 @@ module.exports = {
     'max-lines-per-function': 0,
     'complexity': 0,
     '@typescript-eslint/no-use-before-define': 0
-  }
+  },
+  ignorePatterns: [
+    'astro.config.mjs'
+  ]
 }
