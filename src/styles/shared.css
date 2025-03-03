@@ -1,0 +1,27 @@
+/*
+ * Shared component styles
+ */
+
+/* Header styles */
+header {
+  background: var(--color-primary);
+  color: white;
+  padding: var(--spacing-lg) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: var(--font-size-3xl);
+}
+
+.page-header p {
+  margin: var(--spacing-xs) 0 0;
+  opacity: 0.9;
+}
+
+/* Grid layouts */
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
