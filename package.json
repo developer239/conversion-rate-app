@@ -1,0 +1,37 @@
+{
+  "name": "conversion-rate-app",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro build && npx serve dist",
+    "test": "vitest run",
+    "astro": "astro",
+    "lint": "eslint --ext .ts,.tsx src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@astrojs/react": "4.2.1",
+    "@linaria/core": "5.0.2",
+    "@linaria/react": "5.0.2",
+    "astro": "5.4.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@linaria/vite": "5.0.2",
+    "@linters/eslint-config-typescript": "1.18.0",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "eslint": "8.36.0",
+    "eslint-config-prettier": "8.7.0",
+    "eslint-plugin-import": "2.27.5",
+    "jsdom": "26.0.0",
+    "typescript": "5.8.2",
+    "vitest": "3.0.7"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

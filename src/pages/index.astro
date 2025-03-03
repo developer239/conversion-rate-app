@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ExchangeRate from '../components/ExchangeRate.astro';
+import { config } from '../config';
+---
+
+<Layout title={config.appName}>
+	<ExchangeRate />
+</Layout>

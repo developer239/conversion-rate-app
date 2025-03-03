@@ -1,0 +1,21 @@
+{
+  "github": {
+    "silent": true
+  },
+  "buildCommand": "yarn build",
+  "outputDirectory": "dist",
+  "devCommand": "yarn dev",
+  "installCommand": "yarn install --frozen-lockfile",
+  "framework": "astro",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ]
+}
