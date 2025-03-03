@@ -1,4 +1,6 @@
-# CZK Currency Converter
+[![CI/CD Pipeline](https://github.com/developer239/conversion-rate-app/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/developer239/conversion-rate-app/actions/workflows/ci-cd.yml)
+
+# Currency Converter
 
 A currency conversion app built with Astro and React that displays the latest exchange rates from the Czech National Bank and allows users to convert CZK to other currencies.
 
