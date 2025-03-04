@@ -1,11 +1,6 @@
 {
-  "github": {
-    "silent": true
-  },
   "git": {
-    "deploymentEnabled": {
-      "dev": false
-    }
+    "deploymentEnabled": false
   },
   "framework": "astro",
   "buildCommand": "astro build",
