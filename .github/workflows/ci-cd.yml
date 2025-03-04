@@ -23,7 +23,7 @@ on:
 
     # Run at 2:31 PM CET (Prague time) on weekdays (Monday-Friday)
     # CET is UTC+1, so 2:31 PM CET = 1:31 PM UTC
-    - cron: '33 13 * * 1-5'
+    - cron: '31 13 * * 1-5'
 
   workflow_dispatch:
     inputs:
