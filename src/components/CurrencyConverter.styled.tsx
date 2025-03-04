@@ -5,6 +5,7 @@ export const ConverterContainer = styled.div`
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-lg);
   margin: var(--spacing-xl) 0;
+  width: 100%;
 `;
 
 export const Title = styled.h2`
@@ -95,7 +96,7 @@ export const Button = styled.button`
 export const Result = styled.div`
   margin-top: var(--spacing-lg);
   padding: var(--spacing-lg);
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background-alt-dark);
   border-radius: var(--border-radius-md);
   font-size: var(--font-size-xl);
   text-align: center;
