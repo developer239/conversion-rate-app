@@ -51,5 +51,7 @@ export const parseCurrencyData = (data: string): ICurrencyData => {
     });
   }
 
+  currencies.sort((left, right) => left.currency.localeCompare(right.currency));
+
   return { date, currencies };
 };
