@@ -2,6 +2,11 @@
   "github": {
     "silent": true
   },
+  "git": {
+    "deploymentEnabled": {
+      "dev": false
+    }
+  },
   "framework": "astro",
   "outputDirectory": "dist",
   "headers": [
