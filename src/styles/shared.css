@@ -2,6 +2,27 @@
  * Shared component styles
  */
 
+/*
+ * Utility Classes
+ */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 70%;
+  }
+}
+
+/* Basic responsive adjustments */
+@media (max-width: 768px) {
+  html {
+    font-size: 0.9rem;
+  }
+}
+
 /* Header styles */
 header {
   background: var(--color-primary);
