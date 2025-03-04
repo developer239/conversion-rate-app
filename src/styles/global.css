@@ -95,19 +95,3 @@ a:hover {
 button, input, select, textarea {
   font-family: var(--font-family);
 }
-
-/*
- * Utility Classes
- */
-.container {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-/* Basic responsive adjustments */
-@media (max-width: 768px) {
-  html {
-    font-size: 0.9rem;
-  }
-}
