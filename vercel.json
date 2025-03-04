@@ -8,6 +8,8 @@
     }
   },
   "framework": "astro",
+  "buildCommand": "astro build",
+  "installCommand": "yarn install --frozen-lockfile",
   "outputDirectory": "dist",
   "headers": [
     {
