@@ -78,8 +78,6 @@ npm run test
 
 The application is automatically deployed to Vercel through GitHub Actions:
 
-1. Push changes to the main branch
+1. Merge changes to the main branch
 2. GitHub Actions will run tests and build
-3. If successful, it will deploy to Vercel
-
-The app also rebuilds daily to ensure the exchange rate data is current.
+3. If successful, you can manually deploy to Vercel using GitHub Actions
