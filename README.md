@@ -6,6 +6,8 @@ A currency conversion app built with Astro and React that displays the latest ex
 
 **~74 gzip** (+ ~48KB font)
 
+- 📚 [app](https://conversion-rate-app.vercel.app/)
+
 **Only Few Dependencies:**
 - Astro
 - React
