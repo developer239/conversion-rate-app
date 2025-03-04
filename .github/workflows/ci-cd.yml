@@ -1,5 +1,8 @@
 name: CI/CD Pipeline
 
+# On any push or PR to main (for code in src/ or public/)
+# On schedule (weekdays at 2:31 PM CET)
+# Manual trigger - if the deploy input is set to true
 on:
   push:
     branches: [ main ]
@@ -25,10 +28,10 @@ on:
   workflow_dispatch:
     inputs:
       deploy:
-        description: 'Should deploy'
+        description: 'Deploy to production'
         required: false
-        default: 'false'
-
+        type: boolean
+        default: false
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -59,20 +62,16 @@ jobs:
       - name: Run tests
         run: yarn test
 
-      - name: Build
-        run: yarn build
+      - name: Run type check
+        run: yarn typecheck
 
-      - name: Cache build outputs
-        uses: actions/cache@v4
-        with:
-          path: |
-            dist
-          key: ${{ runner.os }}-build-${{ github.sha }}
+      - name: Run build
+        run: yarn build
 
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy == 'true')
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.deploy == true)
 
     steps:
       - name: Checkout code
@@ -83,14 +82,6 @@ jobs:
         with:
           node-version: '22'
           cache: 'yarn'
-
-      - name: Restore cache
-        uses: actions/cache/restore@v4
-        with:
-          path: |
-            dist
-          key: ${{ runner.os }}-build-${{ github.sha }}
-          fail-on-cache-miss: true
 
       - name: Deploy to Vercel
         env:
