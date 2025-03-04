@@ -38,7 +38,7 @@ This application uses Astro's islands architecture to deliver a fast, mostly sta
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/conversion-rate-app.git
+   git clone https://github.com/developer239/conversion-rate-app.git
    cd conversion-rate-app
    ```
 
