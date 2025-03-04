@@ -99,7 +99,7 @@ const CurrencyConverter = ({ currencyData }: ICurrencyConverterProps) => {
           <Input
             id="amount"
             type="number"
-            name="amount"
+            name="some-amount"
             value={amount}
             onChange={handleAmountChange}
             placeholder="Enter amount in CZK"
