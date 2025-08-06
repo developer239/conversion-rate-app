@@ -30,3 +30,17 @@ export const convertFromCZK = (
 
   return amount * currency.amount / currency.rate;
 };
+
+export const convertToCZK = (
+  amount: number,
+  sourceCurrency: string,
+  currencyData: ICurrencyData
+): number | undefined => {
+  const currency = currencyData.currencies.find(item => item.code === sourceCurrency);
+
+  if (!currency) {
+    return undefined;
+  }
+
+  return (amount / currency.amount) * currency.rate;
+};
